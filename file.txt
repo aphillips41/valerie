@@ -1,0 +1,2 @@
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+bf2aca16169d        valerie_mongo       1.12%               87.23MiB / 1.952GiB   4.36%               3.25kB / 1.21kB     0B / 10.2MB         36

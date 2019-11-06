@@ -1,0 +1,68 @@
+Welcome!
+
+This directory is meant to be a python, docker, bash playground for beginners
+Follow the steps below to get started.
+
+To start over you can run the valerie_reset bash script and it will destroy and recreate your database container and pymongo image
+
+Enjoy!
+
+
+
+Install Docker
+https://docs.docker.com/install/
+
+
+create a mongo container
+docker run -dit --name valerie_mongo --network aarxn_net -p 127.0.0.1:27017:27017 mongo:4.2.1
+
+
+Use the Dockerfile to create a pymongo image 
+We'll use this image to insert records into our database container
+docker build -t valerie_pymongo .
+
+
+Next you run python main.py multiple times to insert a record into your database container and cause your container to use resources 
+(e.g. Memory and CPU)
+for i in {0..69}; do python main.py; done
+
+
+Open a new terminal to continue...
+
+
+To see how your inserts are affecting the containers resource usage use the valerie stream to start capturing stats
+The command below will start a process in the background
+python valerie_stream.py &
+
+
+To stop the stream you'll need to kill the background process 
+https://ss64.com/bash/kill.html
+ps | grep valerie_stream
+kill $PID
+
+
+To read the captured stats and print them use the valerie_stream_reader
+You may not see output everytime you run this command
+There are gaps in the stream where the stats are being overwritten with current values and there's nothing to read
+python valerie_stream_reader.py
+
+
+
+Stay tuned!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
