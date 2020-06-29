@@ -35,10 +35,8 @@ The command below will start a process in the background
 python valerie_stream.py &
 
 
-To stop the stream you'll need to kill the background process 
-https://ss64.com/bash/kill.html
-ps | grep valerie_stream
-kill $PID
+To stop the stream(s) you'll need to kill the background process
+python killStream.py
 
 
 To read the captured stats and print them use the valerie_stream_reader
@@ -49,6 +47,7 @@ python valerie_stream_reader.py
 
 
 Stay tuned!
+
 
 
 
